@@ -10,9 +10,9 @@ O app é uma simples lista de tarefas, com as funcionalidades de adicionar, excl
 </p>
 
 ### Acesso
-O App está disponível em cloud, rodando sobre a estrutura do Google Cloud Services e pode ser acessado via: http://34.82.46.21/
+O App está disponível em cloud, rodando sobre a estrutura do Google Cloud Platform e pode ser acessado via: http://34.82.46.21/
 
-O mesmo salva e acessa os dados da lista utilizando uma instância PostgreSQL também hospedada no GCS.
+O mesmo salva e acessa os dados da lista utilizando uma instância PostgreSQL também hospedada no GCP.
 
 ## Arquitetura
 Uma Docker container image foi criada a partir [deste repositório](https://hub.docker.com/repository/docker/aguilerajoao/lista-de-tarefas).
