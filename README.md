@@ -11,6 +11,7 @@ O app é uma simples lista de tarefas, com as funcionalidades de adicionar, excl
 
 ### Acesso
 O App está disponível em cloud, rodando sobre a estrutura do Google Cloud Services e pode ser acessado via: http://34.82.46.21/
+
 O mesmo salva e acessa os dados da lista utilizando uma instância PostgreSQL também hospedada no GCS.
 
 ## Arquitetura
