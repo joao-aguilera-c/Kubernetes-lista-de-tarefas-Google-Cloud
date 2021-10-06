@@ -18,13 +18,15 @@ O mesmo salva e acessa os dados da lista utilizando uma instância PostgreSQL ta
 Uma Docker container image foi criada a partir [deste repositório](https://hub.docker.com/repository/docker/aguilerajoao/lista-de-tarefas).
 A partir desta imagem faço o deploy com kubernetes utilizando sua ferramenta para command-line kubectl utilizando os seguintes comandos:
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/secrets/secret.yaml # crio as variaveis de sistema ex.: DB_PASS`
+```
+kubectl apply -n lista-de-tarefas -f kubernetes/secrets/secret.yaml # crio as variaveis de sistema ex.: DB_PASS
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/services/service.yaml # Resposavel por balancear o tráfego externo entre os pods`
+kubectl apply -n lista-de-tarefas -f kubernetes/services/service.yaml # Resposavel por balancear o tráfego externo entre os pods
 
-`kubectl apply -f .\kubernetes\deployments\deployment.yaml # executa o deploy`
+kubectl apply -f .\kubernetes\deployments\deployment.yaml # executa o deploy
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/autoscale/autoscale.yaml # gera novas replicas do app caso nescessário`
+kubectl apply -n lista-de-tarefas -f kubernetes/autoscale/autoscale.yaml # gera novas replicas do app caso nescessário
+```
 
 ---------
 
@@ -37,7 +39,9 @@ A partir desta imagem faço o deploy com kubernetes utilizando sua ferramenta pa
 
 ---------
 
-`kubectl get all -n lista-de-tarefas`
+```
+kubectl get all -n lista-de-tarefas
+```
 
 ![image](https://user-images.githubusercontent.com/68448759/136125178-31cd4a5d-2559-4b1a-b476-1d869d17d749.png)
 
