@@ -17,17 +17,15 @@ O mesmo salva e acessa os dados da lista utilizando uma instância PostgreSQL ta
 Uma Docker container image foi criada a partir [deste repositório](https://hub.docker.com/repository/docker/aguilerajoao/lista-de-tarefas).
 A partir desta imagem faço o deploy com kubernetes utilizando sua ferramenta para command-line kubectl utilizando os seguintes comandos:
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/secrets/secret.yaml # crio as variaveis de sistema como DB_USER e DB_PASSWORD`
+`kubectl apply -n lista-de-tarefas -f kubernetes/secrets/secret.yaml # crio as variaveis de sistema ex.: DB_PASS`
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/services/service.yaml # crio o LoadBalancer, resposavel por balancear o tráfego externo entre os pods`
+`kubectl apply -n lista-de-tarefas -f kubernetes/services/service.yaml # Resposavel por balancear o tráfego externo entre os pods`
 
 `kubectl apply -f .\kubernetes\deployments\deployment.yaml # executa o deploy`
 
-`kubectl apply -n lista-de-tarefas -f kubernetes/autoscale/autoscale.yaml # cria o módulo de auto-scale, que gera novas replicas do app caso nescessário`
+`kubectl apply -n lista-de-tarefas -f kubernetes/autoscale/autoscale.yaml # gera novas replicas do app caso nescessário`
 
 ---------
-
-Como visto em `deployment.yaml` e `service.yaml` abaixo apresento a arquitetura do cluster criado:
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/68448759/134965244-d70df5ea-03e4-4a19-81e6-d6e6ccbcfe34.png" />
